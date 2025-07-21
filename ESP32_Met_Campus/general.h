@@ -1,17 +1,17 @@
+#include "SPIFFS.h"
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BMP280.h>
 #include <Arduino.h>
-#include "ArduinoJson.h"
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
-#include <WiFiClient.h>
-#include <WiFiClientSecure.h>
-#include <PubSubClient.h>
-#include <WiFi.h>
-#include "SPIFFS.h"
 #include <Ethernet.h>
 #include <HTTPClient.h>
 #include <HTTPUpdate.h>
-#include <Adafruit_Sensor.h>
-
+#include <PubSubClient.h>
+#include <WiFiClient.h>
+#include <WiFiClientSecure.h>
+#include <WiFi.h>
+#include <Wire.h>
 
 #define ARDUINOJSON_DECODE_UNICODE 0
 #include <ArduinoJson.h>
@@ -69,7 +69,7 @@ const char* topic_out = str_topic_out.c_str();
 // Configuração do OTA
 bool HTTP_OTA = false;
 
-char strbuf[100];
+char strbuf[200];
 char tempString[8];
 char umiString[8];
 char pluvString[8];
